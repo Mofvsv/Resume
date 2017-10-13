@@ -23,21 +23,19 @@ var projects = {
     ]
 }
 var bio = {
-    "bio": [
-        {
-            "name": "Mustaf Eli",
-            "role": "Software Developer",
-            "contact info": {
-                "mobile": "555-555-55555",
-                "github": "@Mofvsv",
-                "location": "Seattle"
-            },
-            "Welcome message": "welcome welcome",
-            "skills": ["awesomeness", "delievering things", "cryogenic sleep", "saving the universe"],
-            "bio pic": "image/fry.jpg"
-        }
-    ]
-};
+    "name": "Mustaf Eli",
+    "role": "Software Developer",
+    "contact info": {
+        "mobile": "555-555-55555",
+        "github": "@Mofvsv",
+        "Email": "elimustaf@gmail.com",
+        "location": "Seattle"
+    },
+    "Welcome message": "Eager to help with your next project",
+    "skills": ["Python", "C#", "Javascript", "awesomeness", "delievering things", "cryogenic sleep", "saving the universe"],
+    "bio pic": "image/fry.jpg"
+
+}
 
 var education = {
     "school": [
@@ -53,4 +51,21 @@ var education = {
             "school": "Udacity",
         }
     ]
+}
+
+if (bio.name) {
+    var formattedName = HTMLheaderName.replace('%data%', bio.name)
+    $('#header').prepend(formattedName);
+}
+
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    var formattedskill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedskill);
+    formattedskill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedskill);
+    formattedskill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedskill);
+    formattedskill = HTMLskills.replace("%data%", bio.skills[3]);
+    $("#skills").append(formattedskill);
 }
